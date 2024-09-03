@@ -1,0 +1,175 @@
+@import '../../shared/styles/variables';
+
+.header-logo {
+    max-width: 240px;
+    display: block;
+    background-color: $primary;
+    height: 100%;
+}
+
+.menu-item {
+    width: 150px; 
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.menu-item img {
+    max-width: 100%;
+    max-height: 70px; 
+    object-fit: contain; 
+}
+
+.menu-item .nav-text {
+    font-size: 17px;
+}
+
+.dropdown {
+    height: 100%;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 20px;
+    width: 95px;
+    height: 100%;
+    justify-content: center;
+}
+
+.nav-icon {
+    width: 40px;
+    height: auto;
+}
+
+.nav-text {
+    font-size: 17px;
+    font-weight: bold;
+    color: #000;
+}
+
+.active {
+    border: 2px solid $primary;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.burger-menu {
+    position: relative;
+    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.burger-icon div {
+    background-color: #333;
+    height: 4px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.burger-icon.open .line1 {
+    transform: rotate(45deg) translate(9px, 5px);
+}
+
+.burger-icon.open .line2 {
+    opacity: 0;
+}
+
+.burger-icon.open .line3 {
+    transform: rotate(-45deg) translate(9px, -5px);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 2px solid $primary;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 18px 22px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 26px;
+}
+
+.nav-link.active,
+.nav-link:focus,
+.dropdown-item.active,
+.dropdown-item:focus {
+    background-color: transparent !important;
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn-phone {
+    border-radius: $radius;
+    background-color: $primary;
+    width: 50px;
+    padding: 15px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-phone:hover {
+    background-color: white;
+}
+
+.checkout {
+    background-color: $primary;
+    height: 100px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
+}
+.contact {
+    text-align: center; 
+    white-space: nowrap; 
+}
+
+.contact p {
+    margin: 0 5px; 
+}

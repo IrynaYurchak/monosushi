@@ -1,0 +1,8 @@
+@import '../../shared/styles/variables';
+.title {
+    text-align: center;
+    border-top: 5px solid $primary;
+    width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+}

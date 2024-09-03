@@ -1,0 +1,33 @@
+@import '../../shared/styles/variables';
+
+.title {
+    text-align: center;
+    border-top: 5px solid $primary;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 54px;
+    font-weight: bold;
+}
+
+.zone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.img-block {
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+
+.text-description {
+    width: 60%;
+    margin: 10px auto;
+    text-align: justify;
+}

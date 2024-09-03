@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg bg-body-tertia fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand header-logo p-4" routerLink="/">
+            <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Flogo%20(1).svg?alt=media&token=2dd4e08e-72e7-45ba-a1a9-fe6a934ba094"
+                alt="Логотип">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <div class="burger-icon" [class.open]="isMenuOpen">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav d-flex justify-content-between align-items-center">
+                <li class="nav-item">
+                    <div class="menu-item">
+                        <a [routerLink]="['/discount']" routerLinkActive="active" class="nav-link" aria-current="page">
+                            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-gift.svg" alt=""
+                                class="nav-icon">
+                            <span class="nav-text">Акції</span>
+                        </a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item d-flex flex-row">
+                    <div class="menu-item mx-3" *ngFor="let category of categories">
+                        <a [routerLink]="['/product', category.path]" routerLinkActive="active" class="nav-link"
+                            aria-current="page">
+                            <img [src]="category.imgPath" class="nav-icon">
+                            <span class="nav-text">{{ category.name }}</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown m-5">
+                    <a class="nav-link burger-menu" href="#" role="button" (click)="toggleMenu($event)">
+                        <div class="burger-icon" [class.open]="isMenuOpen">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu" [class.show]="isMenuOpen">
+                        <li>
+                            <a (click)="closeMenu()" [routerLink]="['/delivery']" routerLinkActive="active"
+                                class="dropdown-item">
+                                <span>Доставка</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="closeMenu()" [routerLink]="['/about']" routerLinkActive="active"
+                                class="dropdown-item">
+                                <span>Про нас</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item m-5">
+                    <button class="btn-phone">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fphone.svg?alt=media&token=a5388c8c-01fa-47bb-ad3f-364704a60740"
+                            height="35px" alt="Телефон">
+                    </button>
+                </li>
+
+                <li class="nav-item contact d-flex flex-column align-items-center m-5">
+                    <p class="fw-bold fs-5">+380978780837</p>
+                    <div class="d-flex flex-row">
+                        <p class="m-0">Працюємо з </p>
+                        <p class="fw-bold m-0"> 11:00 </p>
+                        <p class="m-0"> до </p>
+                        <p class="fw-bold m-0">22:30</p>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <div class="menu-item">
+                        <a [routerLink]="['/admin']" routerLinkActive="active" class="nav-link" aria-current="page">
+                            <span class="nav-text">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fuser.svg?alt=media&token=e3bca4b7-d970-49ea-96dc-89a2ae6575c2"
+                                    height="40px" alt="Адмін">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item checkout m-3">
+
+                    <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fbasket.svg?alt=media&token=b9a0bdde-9a51-46c5-81d7-a3de30e735b2"
+                        height="40px" alt="Кошик">
+                    <p class="fs-3 m-3">грн</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

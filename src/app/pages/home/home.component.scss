@@ -1,0 +1,47 @@
+@import '../../shared/styles/variables';
+
+.wrapper {
+    background-color: black;
+    min-height: 900px;
+}
+
+.main-text {
+    font-size: 55px;
+    font-weight: bold;
+    margin: 40px 10px 40px 100px;
+}
+
+h4 {
+    font-size: 28px;
+    margin: 40px 10px 40px 100px;
+}
+
+.color {
+    color: $primary;
+}
+
+.maim-img img {
+    max-width: 100%; 
+    height: auto;     
+    display: block; 
+    margin: 0px auto;
+}
+.btn {
+    border-radius: $radius;
+    width: 270px;
+    height: 60px;
+    font-size: 29px;
+    margin: 40px 10px 40px 100px;
+}
+
+.btn-detail {
+    background-color: $primary;
+}
+
+.bottom-block {
+    background-color: $primary;
+    width: 100%;
+    min-height: 400px;
+    padding-top: 70px;
+}
+

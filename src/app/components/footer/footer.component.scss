@@ -1,0 +1,22 @@
+@import '../../shared/styles/variables';
+
+.footer {
+    margin-top: 30px;
+    border-top: 6px solid $primary;
+    padding-top: 40px;
+}
+
+.pay-card,
+.media {
+    border: 1px solid $primary;
+    border-radius: $radius;
+    padding: 10px 20px;
+}
+
+.media {
+    background-color: $primary;
+}
+
+.media:hover {
+    background-color: transparent;
+}

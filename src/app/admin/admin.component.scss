@@ -1,0 +1,25 @@
+@import '../shared/styles/variables';
+
+
+.nav-link {
+    border: 1px solid gray;
+    border-radius: 0px;
+    font-size: 30px;
+    padding: 28px;
+    color:$color!important;
+}
+
+.active {
+    border-top: 4px solid $primary;
+    border-left: none;
+    border-right: none;
+    background-color: transparent !important;
+    color:$color!important;
+    font-weight: bold;
+}
+.btn-exit{
+    padding: 15px 25px;
+    background-color: $primary;
+    border-radius: $radius;
+    margin-left: 60px;
+}

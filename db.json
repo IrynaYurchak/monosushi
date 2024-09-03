@@ -1,0 +1,38 @@
+{
+  "discountes": [
+    {
+      "id": "5b97",
+      "data": "12.09.2024",
+      "name": "Рол тижня",
+      "title": "50% знижки на \"Рол тижня",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.  Знижка діє при мінімальній сумі замовлення 300 грн.Ця акція не поєднується з іншими акціями.",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimgonline-com-ua-compressed-ryna9n84oqh1-scaled-697x379.jpg?alt=media&token=a615ce3f-85d0-4e3b-99df-fc466269d442"
+    }
+  ],
+  "categories": [
+    {
+      "id": "88be",
+      "name": "Роли",
+      "path": "roli",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Frolls.svg?alt=media&token=30442af8-538a-40b2-ba5f-3973734d089e"
+    },
+    {
+      "id": "87e6",
+      "name": "Cети",
+      "path": "setu",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsets.svg?alt=media&token=243fffd9-0294-4ec8-82b1-b782c2b2e067"
+    },
+    {
+      "id": "19f3",
+      "name": "Напої",
+      "path": "drinks",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fdrinks.svg?alt=media&token=8a738841-ab01-492e-a31d-2017c6182cba"
+    },
+    {
+      "id": "7939",
+      "name": "Соуси",
+      "path": "sousi",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsousi.svg?alt=media&token=15cf4f2f-bfd0-4943-9c05-d277d81d6c3f"
+    }
+  ]
+}
