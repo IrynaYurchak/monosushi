@@ -1,8 +1,22 @@
 @import '../../shared/styles/variables';
+
 .title {
     text-align: center;
     border-top: 5px solid $primary;
-    width: 350px;
+    width: 100%; /* Або задайте іншу більшу ширину */
     margin: 20px auto;
     padding: 20px;
+}
+
+.discount-list {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 20px; 
+    width: 100%; 
+}
+
+.discount-list img {
+    width: 100%;
+    height: auto;
 }

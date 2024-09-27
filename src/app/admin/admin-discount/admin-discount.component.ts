@@ -3,12 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IDiscountResponse } from '../../shared/interfaces/discount/discount';
+import { IDiscountResponse } from '../../shared/interfaces/discount/discount.interface';
 import { DiscountService } from '../../shared/services/discount/discount.service';
-import { Storage, getDownloadURL, percentage, ref, uploadBytesResumable } from '@angular/fire/storage';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore'
-import { error } from 'node:console';
+import { ImageService } from '../../shared/services/image/image.service';
 
 
 
@@ -18,7 +15,7 @@ import { error } from 'node:console';
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './admin-discount.component.html',
   styleUrls: ['./admin-discount.component.scss'],
-  providers: [DiscountService]
+  providers: [DiscountService, ImageService]
 })
 export class AdminDiscountComponent {
   public addBlock = false;
@@ -31,7 +28,8 @@ export class AdminDiscountComponent {
   constructor(
     private fb: FormBuilder,
     private DiscountService: DiscountService,
-    private storadge: Storage
+    // private storadge: Storage
+    private ImageService:ImageService
   ) { }
   ngOnInit(): void {
     this.initDiscountForm();
@@ -102,7 +100,7 @@ export class AdminDiscountComponent {
 
   upload(event: any): void {
     const file = event.target.files[0];
-    this.uploadFile('images', file.name, file)
+    this.ImageService.uploadFile('images', file.name, file)
       .then(data => {
         this.discountForm.patchValue({
           imgPath: data
@@ -113,27 +111,7 @@ export class AdminDiscountComponent {
         console.log(err);
       })
   }
-  async uploadFile(folder: string, name: string, file: File | null): Promise<string> {
-    const path = `${folder}/${name}`;
-    let url = '';
-    if (file) {
-      try {
-        const storadgeRef = ref(this.storadge, path);
-        const task = uploadBytesResumable(storadgeRef, file);
-        percentage(task).subscribe(data => {
-          this.uploadPercent = data.progress
-        })
-        await task;
-        url = await getDownloadURL(storadgeRef);
-        return Promise.resolve(url)
-      } catch (e: any) {
-        console.error(e);
-      }
-    } else {
-      console.log('Wrong format');
-    }
-    return Promise.resolve(url)
-  }
+ 
   valueByControl(control: string): string {
     return this.discountForm.get(control)?.value;
 

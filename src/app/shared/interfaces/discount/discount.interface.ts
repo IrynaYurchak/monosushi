@@ -1,3 +1,4 @@
+
 export interface IDiscountRequest{
     data:string;
     name:string;
@@ -8,3 +9,4 @@ export interface IDiscountRequest{
 export interface IDiscountResponse extends IDiscountRequest{
     id:number;
 }
+

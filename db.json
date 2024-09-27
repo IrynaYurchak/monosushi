@@ -7,6 +7,14 @@
       "title": "50% знижки на \"Рол тижня",
       "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.  Знижка діє при мінімальній сумі замовлення 300 грн.Ця акція не поєднується з іншими акціями.",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimgonline-com-ua-compressed-ryna9n84oqh1-scaled-697x379.jpg?alt=media&token=a615ce3f-85d0-4e3b-99df-fc466269d442"
+    },
+    {
+      "id": "0e4a",
+      "data": "27.09.2024",
+      "name": "Акційний “3+1=5”",
+      "title": "3+1=5",
+      "description": "Замовляйте 5 ролів, а платіть за 4.",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=a8bbe2cd-6989-48df-97c5-3bcd7217210e"
     }
   ],
   "categories": [
@@ -33,6 +41,52 @@
       "name": "Соуси",
       "path": "sousi",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsousi.svg?alt=media&token=15cf4f2f-bfd0-4943-9c05-d277d81d6c3f"
+    }
+  ],
+  "products": [
+    {
+      "id": "68fe",
+      "category": "Роли",
+      "name": "Філадельфія з лососем",
+      "path": "filadelfiya-z-lososem",
+      "description": "Риc, крем сир, огірок, лосось",
+      "weight": "280",
+      "price": 325,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=9e02afcf-bf28-42c2-900c-3822fe70c462",
+      "count": null
+    },
+    {
+      "id": "653a",
+      "category": "Роли",
+      "name": "Філадельфія в кунжуті",
+      "path": "Філадельфія в кунжуті",
+      "description": "Рис, крем сир, огірок, лосось, кунжут",
+      "weight": "240",
+      "price": 270,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2F2.-filadelfiya-v-kunzhuti.jpg?alt=media&token=8403c50d-4e3f-4a11-8970-52ab6ea1c6a2",
+      "count": null
+    },
+    {
+      "id": "3d72",
+      "category": "Роли",
+      "name": "Філадельфія з тунцем",
+      "path": "filadelfiya-z-tunczem",
+      "description": "Риc, крем сир, авокадо, тунець, cоус солодкий чилі",
+      "weight": "270",
+      "price": 320,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimage-2024-08-01-220008.jpg?alt=media&token=ef12b36e-271d-4a07-a83f-2db66b3a1057",
+      "count": null
+    },
+    {
+      "id": "6585",
+      "category": "Роли",
+      "name": "Філадельфія з вугрем",
+      "path": "filadelfiya-z-vugrem",
+      "description": "Рис, крем сир, авокадо, вугор, унагі соус, кунжут",
+      "weight": "280",
+      "price": 355,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Ffiladelfiya-z-vugr.jpg?alt=media&token=90690f87-2212-4251-87df-bcc98ee1d649",
+      "count": null
     }
   ]
 }

@@ -1,3 +1,36 @@
 <div class="title">
     <h2>Продукти</h2>
 </div>
+<ul class="productList">
+    <div class="nav nav-tabs">
+        <button type="button" class="nav-link active fs-4 fw-bold" aria-current="page">Всі</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Філадельфія</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Каліфорнія</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Запечені</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Фірмові</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Макі</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Преміум</button>
+    </div>
+
+</ul>
+<div class="product-list">
+    <div class="box-product m-4 p-4" *ngFor="let product of userProducts">
+        <div class="product-image"> <img class="m-5" [src]="product.imgPath" width="500px" alt=""> </div>
+        <div class="product-info">
+            <p class="fw-bold fs-1 text-center">{{product.name}}</p>
+            <div class="d-flex justify-content-between">
+                <p class="fs-3">{{product.description}}</p>
+                <p class="fs-3 ms-3"> <span class="fw-bold  ">{{product.weight}}г</span></p>
+            </div>
+            <div class="boxBottom">
+                <p class="price fw-bold fs-3">{{product.price}} грн</p>
+                <div class="countBox d-flex align-items-center">
+                    <button>-</button>
+                    <p class="m-2">1</p>
+                    <button>+</button>
+                </div>
+                <button class="btn btn-order fs-3">Замовити</button>
+            </div>
+        </div>
+    </div>
+</div>

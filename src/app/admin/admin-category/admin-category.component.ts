@@ -6,10 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ICategoryResponse } from '../../shared/interfaces/category/category.interface';
 import { CategoryService } from '../../shared/services/category/category.service';
-import { Storage, getDownloadURL, percentage, ref, uploadBytesResumable } from '@angular/fire/storage';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore'
-import { error } from 'node:console';
+import { ImageService } from '../../shared/services/image/image.service';
 
 @Component({
   selector: 'app-admin-category',
@@ -17,7 +14,7 @@ import { error } from 'node:console';
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './admin-category.component.html',
   styleUrls: ['./admin-category.component.scss'],
-  providers: [CategoryService]
+  providers: [CategoryService, ImageService]
 })
 export class AdminCategoryComponent implements OnInit {
   public adminCategories: Array<ICategoryResponse> = [];
@@ -31,7 +28,7 @@ export class AdminCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    private storadge: Storage) { }
+    private ImageService:ImageService ) { }
 
 
   ngOnInit(): void {
@@ -96,7 +93,7 @@ export class AdminCategoryComponent implements OnInit {
   }
   upload(event: any): void {
     const file = event.target.files[0];
-    this.uploadFile('images', file.name, file)
+    this.ImageService.uploadFile('images', file.name, file)
       .then(data => {
         this.categoryForm.patchValue({
           imgPath: data
@@ -107,27 +104,7 @@ export class AdminCategoryComponent implements OnInit {
         console.log(err);
       })
   }
-  async uploadFile(folder: string, name: string, file: File | null): Promise<string> {
-    const path = `${folder}/${name}`;
-    let url = '';
-    if (file) {
-      try {
-        const storadgeRef = ref(this.storadge, path);
-        const task = uploadBytesResumable(storadgeRef, file);
-        percentage(task).subscribe(data => {
-          this.uploadPercent = data.progress
-        })
-        await task;
-        url = await getDownloadURL(storadgeRef);
-        return Promise.resolve(url)
-      } catch (e: any) {
-        console.error(e);
-      }
-    } else {
-      console.log('Wrong format');
-    }
-    return Promise.resolve(url)
-  }
+
   valueByControl(control: string): string {
     return this.categoryForm.get(control)?.value;
 

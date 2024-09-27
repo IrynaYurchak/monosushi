@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiscountComponent } from './discount.component';
+import { DiscountComponent } from '../../shared/interfaces/discount/discount.interface';
 
 describe('DiscountComponent', () => {
   let component: DiscountComponent;

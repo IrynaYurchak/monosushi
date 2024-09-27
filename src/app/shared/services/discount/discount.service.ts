@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IDiscountResponse, IDiscountRequest } from '../../interfaces/discount/discount';
+import { IDiscountResponse, IDiscountRequest } from '../../interfaces/discount/discount.interface';
 import { environment } from '../../../environment/environment';
 
 @Injectable({

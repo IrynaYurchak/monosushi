@@ -8,12 +8,7 @@
 .main-text {
     font-size: 55px;
     font-weight: bold;
-    margin: 40px 10px 40px 100px;
-}
-
-h4 {
-    font-size: 28px;
-    margin: 40px 10px 40px 100px;
+    margin: 40px 10px 40px 10px;
 }
 
 .color {
@@ -21,17 +16,18 @@ h4 {
 }
 
 .maim-img img {
-    max-width: 100%; 
-    height: auto;     
-    display: block; 
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: 0px auto;
 }
+
 .btn {
     border-radius: $radius;
     width: 270px;
     height: 60px;
     font-size: 29px;
-    margin: 40px 10px 40px 100px;
+    margin: 40px 10px 40px 10px;
 }
 
 .btn-detail {
@@ -45,3 +41,116 @@ h4 {
     padding-top: 70px;
 }
 
+.title {
+    text-align: center;
+    border-top: 5px solid $primary;
+    width: 380px;
+    margin: 20px auto;
+    padding: 20px;
+
+    h2 {
+        font-size: 70px;
+        font-weight: bold;
+    }
+}
+
+.nav {
+    display: flex;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.nav-link {
+    font-size: 30px;
+    padding: 28px;
+    color: $color !important;
+    border: 1px solid gray;
+    border-radius: 0px;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.active {
+    border-top: 6px solid $primary !important;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    color: $color !important;
+}
+
+.box-product {
+    width: 520px;
+    min-height: 800px;
+    border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: 0px !important;
+}
+
+.product-list {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 10px; 
+    width: 100%; 
+    color: #383737;
+}
+.box-product:hover {
+    border: 5px solid $primary;
+}
+
+.product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.boxBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+
+    .price {
+        margin-left: 0px;
+    }
+}
+
+.countBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    padding: 5px;
+}
+
+.countBox button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countBox p {
+    margin: 0 10px;
+}
+
+.btn-order {
+    padding: 5px;
+    background-color: $primary;
+    border-radius: $radius;
+    width: 200px;
+
+}

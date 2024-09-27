@@ -1,3 +1,9 @@
 <div class="title">
     <h2>Акції</h2>
+    <div class="discount-list">
+        <div *ngFor="let discount of userDiscountes">
+            <img class="m-5" [src]="discount.imgPath" alt="">
+            <h2>{{discount.name}}</h2>
+        </div>
+    </div>
 </div>

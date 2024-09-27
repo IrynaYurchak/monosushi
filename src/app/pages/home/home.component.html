@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="d-flex flex-row">
-        <div class="col-5 text-light">
+        <div class="col-5 text-light m-5">
             <h2 class="main-text">Ми це доставка <span class="color">щастя</span>. <br>
                 <span class="color">Monosushi </span>- Ми любимо коли тобі смачно
             </h2>
@@ -21,34 +21,72 @@
     <div class="bottom-block">
         <div class="container-fluid text-center">
             <div class="row justify-content-between align-items-center h-100">
-               
+
                 <div class="col-4 d-flex align-items-center justify-content-center">
                     <div class="">
                         <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/home%2Fmn-delivery-img.svg?alt=media&token=799b6763-2bd6-4f39-9bc9-3f8a0677b212"
                             alt="">
                     </div>
-                    <button type="button" [routerLink]="['/delivery']" class="btn btn-light ms-3 ">зони доставки</button>
+                    <button type="button" [routerLink]="['/delivery']" class="btn btn-light ms-3 ">зони
+                        доставки</button>
                 </div>
-             
+
                 <div class="col-4 d-flex align-items-center justify-content-center">
                     <div class="">
                         <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/home%2Fmono-supermen.svg?alt=media&token=acc9b1cf-d735-4aac-b251-843f4dd0ac5d"
-                        width="150px"  alt="">
+                            width="150px" alt="">
                     </div>
                     <div class="ms-3 fs-4">
                         Середній час доставки в зеленій зоні <b>00:43:00</b>
                     </div>
                 </div>
-              
+
                 <div class="col-4 d-flex align-items-center justify-content-center">
                     <div class="">
                         <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/home%2Fmono-bonus.svg?alt=media&token=02a49e28-9a71-44af-9108-32462f1c25c8"
-                           width="120px" alt="">
+                            width="120px" alt="">
                     </div>
                     <div class="ms-3 fs-4">
                         Наш графік роботи Працюємо з <b>11:00</b> до <b>22:30</b>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="title">
+    <h2>Продукти</h2>
+</div>
+<ul class="productList" >
+    <div class="nav nav-tabs">
+        <button type="button" class="nav-link active fs-4 fw-bold" aria-current="page">Всі</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Філадельфія</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Каліфорнія</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Запечені</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Фірмові</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Макі</button>
+        <button type="button" class="nav-link fs-4 fw-bold">Преміум</button>
+    </div>
+    
+</ul>
+<div class="product-list">
+    <div class="box-product m-4 p-4" *ngFor="let product of userProducts">
+        <div class="product-image"> <img class="m-5" [src]="product.imgPath" width="500px" alt=""> </div>
+        <div class="product-info">
+            <p class="fw-bold fs-1 text-center">{{product.name}}</p>
+            <div class="d-flex justify-content-between">
+                <p class="fs-3">{{product.description}}</p>
+                <p class="fs-3 ms-3"> <span class="fw-bold  ">{{product.weight}}г</span></p>
+            </div>
+            <div class="boxBottom">
+                <p class="price fw-bold fs-3">{{product.price}}</p><p class="fs-3">грн</p>
+                <div class="countBox d-flex align-items-center">
+                    <button>-</button>
+                    <p class="m-2">1</p>
+                    <button>+</button>
+                </div>
+                <button class="btn btn-order fs-3">Замовити</button>
             </div>
         </div>
     </div>
