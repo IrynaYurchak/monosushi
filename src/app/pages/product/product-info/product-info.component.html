@@ -1,0 +1,33 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ul class="breadcrumb p-5 fs-4">
+    <li class="breadcrumb-item ms-5" [routerLink]="['/']">Головна</li>
+    <li class="breadcrumb-item ms-5" [routerLink]="['/product', currentProduct.category]" aria-current="page">
+      {{ currentProduct.category }}
+    </li>
+    <li class="breadcrumb-item ms-5" aria-current="page">{{ currentProduct.name }}</li>
+  </ul>
+</nav>
+<div *ngIf="currentProduct" class="card mb-3">
+  <div class="row g-0 d-flex justify-content-around">
+    <div class="col-md-4">
+      <img [src]="currentProduct.imgPath" class="img-fluid me-5" alt="{{currentProduct.name}}">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h1 class="card-title fw-bold m-5">{{currentProduct.name}}</h1>
+        <p class="card-text fs-2 "> <span class="text-color">Склад:</span>
+          Склад: {{currentProduct.description}}</p>
+        <p class="card-text fs-2"> <span class="text-color">Вага:</span> {{currentProduct.weight}}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="price fw-bold fs-3">{{currentProduct.price * currentProduct.count}} грн</p>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" (click)="productCount(currentProduct, false)" class="btn btn-primary">-</button>
+            <input class="form-control count" type="text" [value]="currentProduct.count">
+            <button type="button" (click)="productCount (currentProduct, true)" class="btn btn-primary">+</button>
+          </div>
+          <button class="btn btn-order fs-3" (click)="addToBasket(currentProduct)">Замовити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,9 +8,7 @@
                 <input class="mr-2" formControlName="name" type="text" name="name" placeholder="*Назва">
                 <input class="mr-2" formControlName="title" type="text" name="title" placeholder="*Заголовок">
             </div>
-            <input formControlName="description" class="description" name="description" type="text" placeholder="*Опис">
-
-
+            <textarea formControlName="description" class="form-control description mt-5" name="description" placeholder="*Опис" rows="5"></textarea>
 
             <ng-container *ngIf="!isUploaded">
                 <div class="mb-3">

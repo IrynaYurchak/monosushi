@@ -1,4 +1,5 @@
 @import '../../shared/styles/variables';
+
 .title {
     text-align: center;
     border-top: 5px solid $primary;
@@ -6,6 +7,7 @@
     margin: 20px auto;
     padding: 20px;
 }
+
 .nav {
     display: flex;
     padding: 0;
@@ -18,20 +20,21 @@
     color: $color !important;
     border: 1px solid gray;
     border-radius: 0px;
-    margin: 0 ;
-    flex: 1; 
-    text-align: center; 
+    margin: 0;
+    flex: 1;
+    text-align: center;
 }
 
 .active {
-    border-top: 6px solid $primary !important;;
+    border-top: 6px solid $primary !important;
     border-left: none;
     border-right: none;
     border-bottom: none;
     color: $color !important;
 }
+
 .box-product {
-    width: 550px;
+    width: 500px;
     min-height: 700px;
     border-radius: $radius;
     display: flex;
@@ -41,15 +44,23 @@
     text-align: center;
     margin-left: 0px !important;
 }
+
 .product-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-around; 
-    gap: 20px; 
-    width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
 }
+
 .box-product:hover {
     border: 5px solid $primary;
+}
+.productName:hover{
+    color:$primary;
+}
+.description {
+    min-height: 70px;
 }
 
 .product-info {
@@ -61,44 +72,19 @@
     padding: 20px 0;
 }
 
-.boxBottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding-top: 10px;
-
-    .price {
-        margin-left: 0px;
-    }
-}
-
-.countBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid darkgray;
-    padding: 5px;
-}
-
-.countBox button {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.countBox p {
-    margin: 0 10px;
+.count {
+    width: 40px;
+   min-height: 50px;
 }
 
 .btn-order {
     padding: 5px;
     background-color: $primary;
     border-radius: $radius;
+}
 
+.btn-group,
+.price,
+.btn-order {
+    margin: 0 10px;
 }

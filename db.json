@@ -5,7 +5,7 @@
       "data": "12.09.2024",
       "name": "Рол тижня",
       "title": "50% знижки на \"Рол тижня",
-      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.  Знижка діє при мінімальній сумі замовлення 300 грн.Ця акція не поєднується з іншими акціями.",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню. \nЗнижка діє при мінімальній сумі замовлення 300 грн.\nЦя акція не поєднується з іншими акціями.",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimgonline-com-ua-compressed-ryna9n84oqh1-scaled-697x379.jpg?alt=media&token=a615ce3f-85d0-4e3b-99df-fc466269d442"
     },
     {
@@ -13,80 +13,113 @@
       "data": "27.09.2024",
       "name": "Акційний “3+1=5”",
       "title": "3+1=5",
-      "description": "Замовляйте 5 ролів, а платіть за 4.",
+      "description": "Замовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=a8bbe2cd-6989-48df-97c5-3bcd7217210e"
     }
   ],
   "categories": [
     {
-      "id": "88be",
+      "id": "fc42",
       "name": "Роли",
       "path": "roli",
-      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Frolls.svg?alt=media&token=30442af8-538a-40b2-ba5f-3973734d089e"
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Frolls.svg?alt=media&token=09cec2a6-b72e-4b80-9875-76a75d6a1767"
     },
     {
-      "id": "87e6",
-      "name": "Cети",
+      "id": "13f5",
+      "name": "Сети",
       "path": "setu",
-      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsets.svg?alt=media&token=243fffd9-0294-4ec8-82b1-b782c2b2e067"
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsets.svg?alt=media&token=4b84e46d-343b-4f34-94c1-faf1ca7bc3c9"
     },
     {
-      "id": "19f3",
+      "id": "5a37",
       "name": "Напої",
-      "path": "drinks",
-      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fdrinks.svg?alt=media&token=8a738841-ab01-492e-a31d-2017c6182cba"
+      "path": "napoyi",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fdrinks.svg?alt=media&token=4d704e77-5f41-478c-9ad1-7fd3dafa8452"
     },
     {
-      "id": "7939",
+      "id": "0051",
       "name": "Соуси",
       "path": "sousi",
-      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsousi.svg?alt=media&token=15cf4f2f-bfd0-4943-9c05-d277d81d6c3f"
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsousi.svg?alt=media&token=5ecd49cb-e351-4d6e-8967-f35df92d9e36"
     }
   ],
   "products": [
     {
       "id": "68fe",
-      "category": "Роли",
+      "category": "roli",
       "name": "Філадельфія з лососем",
       "path": "filadelfiya-z-lososem",
       "description": "Риc, крем сир, огірок, лосось",
-      "weight": "280",
+      "weight": "280г",
       "price": 325,
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=9e02afcf-bf28-42c2-900c-3822fe70c462",
-      "count": null
+      "count": 1
     },
     {
       "id": "653a",
-      "category": "Роли",
+      "category": "roli",
       "name": "Філадельфія в кунжуті",
       "path": "Філадельфія в кунжуті",
       "description": "Рис, крем сир, огірок, лосось, кунжут",
-      "weight": "240",
+      "weight": "240г",
       "price": 270,
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2F2.-filadelfiya-v-kunzhuti.jpg?alt=media&token=8403c50d-4e3f-4a11-8970-52ab6ea1c6a2",
       "count": null
     },
     {
       "id": "3d72",
-      "category": "Роли",
+      "category": "roli",
       "name": "Філадельфія з тунцем",
       "path": "filadelfiya-z-tunczem",
       "description": "Риc, крем сир, авокадо, тунець, cоус солодкий чилі",
-      "weight": "270",
+      "weight": "270г",
       "price": 320,
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fimage-2024-08-01-220008.jpg?alt=media&token=ef12b36e-271d-4a07-a83f-2db66b3a1057",
       "count": null
     },
     {
       "id": "6585",
-      "category": "Роли",
+      "category": "roli",
       "name": "Філадельфія з вугрем",
       "path": "filadelfiya-z-vugrem",
       "description": "Рис, крем сир, авокадо, вугор, унагі соус, кунжут",
-      "weight": "280",
+      "weight": "280г",
       "price": 355,
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Ffiladelfiya-z-vugr.jpg?alt=media&token=90690f87-2212-4251-87df-bcc98ee1d649",
       "count": null
+    },
+    {
+      "id": "75be",
+      "category": "setu",
+      "name": "Моно сет",
+      "path": "mono-set",
+      "description": "Філадельфія грін з креветкою / Запечені моно макі з креветкою / Запечений моно з креветкою / Філадельфія з креветкою",
+      "weight": "1030г",
+      "price": 1140,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fmono-set-scaled.jpg?alt=media&token=0c629c89-0e07-441a-a7d6-b7ae2a1a09b8",
+      "count": null
+    },
+    {
+      "id": "2fd2",
+      "category": "napoyi",
+      "name": "Сік  “Sandora”",
+      "path": "sik-syczylijskyj-apelsyn-sandora",
+      "description": "Сік сицилійський апельсин “Sandora”",
+      "weight": "1л",
+      "price": 90,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2Fsyczylijskyj.jpg?alt=media&token=90a2522a-bb50-4cd1-b304-08348a01b61c",
+      "count": 1
+    },
+    {
+      "id": "ccf2",
+      "category": "sousi",
+      "name": "Унагі соус",
+      "path": "unagi-sous",
+      "description": "Унагі соус",
+      "weight": "50 мл",
+      "price": 40,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2F66666.jpg?alt=media&token=a91da476-dc60-4032-b25a-c3c07fb18f4b",
+      "count": 1
     }
   ]
 }

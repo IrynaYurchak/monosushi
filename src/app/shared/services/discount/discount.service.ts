@@ -16,13 +16,16 @@ export class DiscountService {
   getAll(): Observable<IDiscountResponse[]> {
     return this.http.get<IDiscountResponse[]>(this.api.discountes);
   }
+  getOne(id: string): Observable<IDiscountResponse> {
+    return this.http.get<IDiscountResponse>(`${this.api.discountes}/${id}`);
+  }
   create(discount: IDiscountRequest): Observable<IDiscountResponse> {
     return this.http.post<IDiscountResponse>(this.api.discountes, discount)
   }
-  update(discount:  IDiscountRequest, id: number): Observable<IDiscountResponse> {
+  update(discount:  IDiscountRequest, id: string): Observable<IDiscountResponse> {
     return this.http.patch<IDiscountResponse>(`${this.api.discountes}/${id}`, discount);
   }
-  delete(id: number): Observable<void> {
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.api.discountes}/${id}`);
   }
 }

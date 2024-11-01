@@ -22,13 +22,12 @@ export class AdminDiscountComponent {
   public editStatus = false;
   public adminDiscountes: Array<IDiscountResponse> = [];
   public discountForm!: FormGroup;
-  private currentDiscountId = 0;
+  private currentDiscountId = '';
   public uploadPercent!: number;
   public isUploaded = false;
   constructor(
     private fb: FormBuilder,
     private DiscountService: DiscountService,
-    // private storadge: Storage
     private ImageService:ImageService
   ) { }
   ngOnInit(): void {

@@ -26,7 +26,7 @@ export class AdminProductComponent implements OnInit {
   public uploadPercent!: number;
   public isUploaded = false;
   private currentCategoryId = 0;
-  private currenProductId = 0;
+  private currenProductId = '';
 
   constructor(
     private fb: FormBuilder,
@@ -47,7 +47,7 @@ export class AdminProductComponent implements OnInit {
       description: [null, Validators.required],
       weight: [null, Validators.required],
       price: [null, Validators.required],
-      imgPath: [null, Validators.required ],
+      imgPath: [null, Validators.required],
       count: [1]
     });
   }
@@ -100,10 +100,10 @@ export class AdminProductComponent implements OnInit {
       category: product.category,
       name: product.name,
       path: product.path,
-      description:product.description,
-      weight:product.weight,
+      description: product.description,
+      weight: product.weight,
       price: product.price,
-      imgPath:product.imgPath
+      imgPath: product.imgPath
     });
     this.currenProductId = product.id;
   }

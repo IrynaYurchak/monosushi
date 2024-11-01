@@ -1,0 +1,39 @@
+@import '../../../shared/styles/variables';
+
+.container {
+    width: 50%;
+}
+
+.discountName {
+    width: 100%;
+    min-height: 280px;
+    background-color: $primary;
+    border-radius: $radius;
+    padding: 50px;
+    box-sizing: border-box;
+
+    p {
+        font-size: 80px;
+        border-top: 5px solid black;
+        text-align: center;
+        min-width: 300px;
+    }
+}
+
+h1 {
+    font-size: 65px;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.description {
+    li::marker {
+        color: $primary;
+    }
+}

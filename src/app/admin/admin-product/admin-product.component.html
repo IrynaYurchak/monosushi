@@ -7,7 +7,7 @@
             <div class="mb-3">
                 <label for="name" class="form-label fs-4">Виберіть категорію</label>
                 <select formControlName="category" class="form-select">
-                    <option [ngValue]="category.name" *ngFor="let category of adminCategories">{{category.name}}
+                    <option [value]="category.path" *ngFor="let category of adminCategories">{{category.name}}
                     </option>
                 </select>
 

@@ -24,7 +24,7 @@
 
 .btn {
     border-radius: $radius;
-    width: 270px;
+    width: 240px;
     height: 60px;
     font-size: 29px;
     margin: 40px 10px 40px 10px;
@@ -47,7 +47,6 @@
     width: 380px;
     margin: 20px auto;
     padding: 20px;
-
     h2 {
         font-size: 70px;
         font-weight: bold;
@@ -79,28 +78,24 @@
     color: $color !important;
 }
 
-.box-product {
-    width: 520px;
-    min-height: 800px;
-    border-radius: $radius;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    margin-left: 0px !important;
-}
-
 .product-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-around; 
-    gap: 10px; 
-    width: 100%; 
-    color: #383737;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
 }
+.box-product{
+    width: 590px;}
+    
 .box-product:hover {
     border: 5px solid $primary;
+}
+.productName:hover{
+    color:$primary;
+}
+.description {
+    min-height: 70px;
 }
 
 .product-info {
@@ -112,45 +107,21 @@
     padding: 20px 0;
 }
 
-.boxBottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding-top: 10px;
-
-    .price {
-        margin-left: 0px;
-    }
+.count, .btn-count {
+    width: 40px;
+   height: 50px;
+  
 }
-
-.countBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid darkgray;
-    padding: 5px;
-}
-
-.countBox button {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.countBox p {
-    margin: 0 10px;
-}
-
+.btn-count{ border-radius: $radius;}
 .btn-order {
     padding: 5px;
     background-color: $primary;
     border-radius: $radius;
-    width: 200px;
-
 }
+
+.btn-group,
+.price,
+.btn-order {
+    margin: 0 10px;
+}
+

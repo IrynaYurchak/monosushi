@@ -8,7 +8,7 @@
 }
 
 .menu-item {
-    width: 150px; 
+    width: 150px;
     height: 120px;
     display: flex;
     flex-direction: column;
@@ -20,8 +20,8 @@
 
 .menu-item img {
     max-width: 100%;
-    max-height: 70px; 
-    object-fit: contain; 
+    max-height: 70px;
+    object-fit: contain;
 }
 
 .menu-item .nav-text {
@@ -165,11 +165,47 @@
     margin: 0;
     padding: 0;
 }
+
 .contact {
-    text-align: center; 
-    white-space: nowrap; 
+    text-align: center;
+    white-space: nowrap;
 }
 
 .contact p {
-    margin: 0 5px; 
+    margin: 0 5px;
+}
+
+.basketContent {
+    width: 850px;
+}
+.basketContent {
+    position: fixed;
+    top: 160px; 
+    right: 20px; 
+    width: 950px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: $radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 15px;
+    z-index: 1000; 
+}
+.imgBasket {
+    width: 150px;
+
+}
+
+.count {
+    width: 40px;
+    min-height: 40px;
+}
+
+.total {
+    background-color: $primary;
+    height: 100px;
+}
+
+.btn-order {
+    background-color: #fff;
+    border-radius: $radius;
 }

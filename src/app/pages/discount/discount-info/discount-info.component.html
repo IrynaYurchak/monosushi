@@ -1,0 +1,20 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ul class="breadcrumb p-5 fs-4">
+    <li class="breadcrumb-item ms-5" routerLink="/">Головна </li>
+    <li class="breadcrumb-item ms-5" [routerLink]="['/discount']" aria-current="page">Акції</li>
+    <li class="breadcrumb-item  ms-5" aria-current="page">{{userDiscount.name}}</li>
+  </ul>
+</nav>
+
+
+<div class="container">
+  <div class=" discountName align-content-center  mt-5 m-auto">
+    <p class="justify-content-center">{{userDiscount.name}}</p>
+  </div>
+  <h1 class="text-center mt-5 ">{{userDiscount.name}}</h1>
+  <ul class="fs-3 mt-5 description">
+    <li *ngFor="let item of splitDescription(userDiscount.description)">
+      {{ item }}
+    </li>
+  </ul>
+</div>
