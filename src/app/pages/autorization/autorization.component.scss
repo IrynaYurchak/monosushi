@@ -1,0 +1,14 @@
+@import '../../shared/styles/variables';
+
+.btn-login {
+    background-color: $primary;
+    border-radius: $radius;
+    padding: 10px;
+    width: 200px;
+    color: $color;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+input{height: 55px;
+font-size: 25px;}

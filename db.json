@@ -121,5 +121,21 @@
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/images%2F66666.jpg?alt=media&token=a91da476-dc60-4032-b25a-c3c07fb18f4b",
       "count": 1
     }
+  ],
+  "auth": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "qwerty123",
+      "fullName": "Petro Petriv",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "email": "user@gmail.com",
+      "password": "qwerty123",
+      "fullName": "Pavlo Pavliv",
+      "role": "USER"
+    }
   ]
 }
