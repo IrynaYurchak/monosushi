@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+  border-top: 5px solid #b5d8f7;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.discount-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+}
+
+.discount-list img {
+  width: 100%;
+  height: auto;
+}
+
+.btn-box {
+  border-top: 6px solid #b5d8f7;
+}
+
+.discountName:hover {
+  color: #b5d8f7;
+}
+
+.detail {
+  border-radius: 7px;
+  background-color: #b5d8f7;
+  width: 400px;
+  min-height: 70px;
+}
+
+.detail:hover {
+  background-color: transparent;
+}/*# sourceMappingURL=discount.component.css.map */

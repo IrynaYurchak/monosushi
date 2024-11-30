@@ -1,0 +1,19 @@
+.card {
+  margin: 100px, auto;
+  width: 100%;
+  min-height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-color {
+  color: #b5d8f7;
+}
+
+.card-title {
+  font-size: 75px;
+}
+
+ul {
+  list-style-type: disc;
+}/*# sourceMappingURL=product-info.component.css.map */

@@ -80,17 +80,6 @@
                     </div>
                 </li>
 
-                <!-- <li class="nav-item" *ngIf="isLogin">
-                    <div class="menu-item">
-                        <a [routerLink]="['/+loginUrl']" routerLinkActive="active" class="nav-link" aria-current="page">
-                            <span class="nav-text">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fuser.svg?alt=media&token=e3bca4b7-d970-49ea-96dc-89a2ae6575c2"
-                                    height="40px" alt="Адмін">
-                            </span>
-                            {{loginPage}}
-                        </a>
-                    </div>
-                </li> -->
                 <li class="nav-item" *ngIf="isLogin">
                     <div class="menu-item">
                         <a [routerLink]="['/' + loginUrl]" routerLinkActive="active" class="nav-link"
@@ -106,41 +95,26 @@
                 <li class="nav-item fs-3" *ngIf="isLoginUser">
                     <div class="menu-item" (click)="logout()"> Log out </div>
                 </li>
+
                 <li class="nav-item" *ngIf="!isLogin">
                     <div class="menu-item">
-                        <a [routerLink]="['/auth']" routerLinkActive="active" class="nav-link" aria-current="page">
+                        <a (click)="openLoginDialog()" aria-current="page">
                             <span class="nav-text">
                                 <p class="fs-4">Login</p>
                             </span>
                         </a>
                     </div>
                 </li>
-                <li class="nav-item checkout m-3" (click)="showBasket()">
+
+                <li class="nav-item checkout m-3" (click)=" openBasketDialog()">
                     <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fbasket.svg?alt=media&token=b9a0bdde-9a51-46c5-81d7-a3de30e735b2"
                         height="40px" alt="Кошик">
                     <p class="fs-3 m-3">{{ total }} грн</p>
                 </li>
+
+
             </ul>
         </div>
     </div>
 
 </nav>
-
-<div class="basketContent p-4" *ngIf="basketContent">
-    <div *ngFor="let product of productInBasket" class="top d-flex align-items-center justify-content-between">
-        <img [src]="product.imgPath" class="imgBasket col-1" alt="{{ product.name }}">
-        <h4 class="fw-bold m-0 col-4">{{ product.name }}</h4>
-
-        <div class="btn-group col-1" role="group" aria-label="Basic example">
-            <button type="button" (click)="productCount(product, false)" class="btn-count btn-primary">-</button>
-            <input class="form-control count" type="text" [value]="product.count">
-            <button type="button" (click)="productCount(product, true)" class="btn-count btn-primary">+</button>
-        </div>
-
-        <p class="fw-bold m-0 col-1">{{ product.price * product.count }} грн</p>
-    </div>
-    <div class="total d-flex align-items-center justify-content-between p-5 mt-5">
-        <h3>Cума: {{ total }} грн</h3>
-        <button class="btn-order fs-4 p-3" (click)="order()">Оформити замовлення</button>
-    </div>
-</div>

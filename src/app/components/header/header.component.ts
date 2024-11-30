@@ -8,11 +8,15 @@ import { IProductResponse } from '../../shared/interfaces/product/product.interf
 import { OrderService } from '../../shared/services/order/order.service';
 import { ROLE } from '../../shared/constant/role.constant';
 import { AccountService } from '../../shared/services/account/account.service';
+import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { SharedModule } from '../../shared/shared.module';
+import { BasketComponent } from '../basket/basket.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule, HttpClientModule],
+  imports: [RouterModule, CommonModule, HttpClientModule, SharedModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   providers: [CategoryService]
@@ -22,7 +26,6 @@ export class HeaderComponent implements OnInit {
   private basket: Array<IProductResponse> = [];
   public productInBasket: Array<IProductResponse> = [];
   public total = 0;
-  public basketContent = false;
   public isLogin = false;
   public loginUrl = '';
   public loginPage = '';
@@ -32,7 +35,9 @@ export class HeaderComponent implements OnInit {
     private categoryService: CategoryService,
     private accountService: AccountService,
     private orderService: OrderService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
+
   ) { }
 
   ngOnInit(): void {
@@ -82,20 +87,6 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  showBasket(): void {
-    this.basketContent = !this.basketContent;
-  }
-  productCount(product: IProductResponse, value: boolean): void {
-    if (value) {
-      ++product.count;
-    } else if (!value && product.count > 1) {
-      --product.count;
-    }
-  }
-  order(): void {
-    this.basketContent = false;
-  }
-
   checkUserLogin(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
 
@@ -132,5 +123,19 @@ export class HeaderComponent implements OnInit {
       this.isLoginUser= false
     }
   
+    openLoginDialog():void{
+      this.dialog.open(AuthDialogComponent,{
+        backdropClass:'dialog-back',
+        panelClass:'auth-dialog',
+        autoFocus:false
+      })
+    }
+
+    openBasketDialog():void{
+      this.dialog.open(BasketComponent,{
+        backdropClass:'dialog-back',
+        panelClass:'basketContent'
+      })
+    }
 }
 

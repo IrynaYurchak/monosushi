@@ -1,0 +1,42 @@
+@import '../../shared/styles/variables';
+.basketContent {
+    width: 850px;
+}
+
+.basketContent {
+    position: fixed;
+    top: 160px;
+    right: 20px;
+    width: 950px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: $radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.imgBasket {
+    width: 150px;
+
+}
+
+.count {
+    width: 40px;
+    min-height: 40px;
+}
+
+.total {
+    background-color: $primary;
+    height: 100px;
+}
+
+.btn-order {
+    background-color: #fff;
+    border-radius: $radius;
+}
+
+.btn-empty {
+    background-color: $primary;
+    margin-top: 20px;
+    font-size: 25px;
+    padding: 10px 20px;
+}

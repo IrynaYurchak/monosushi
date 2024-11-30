@@ -1,0 +1,23 @@
+.nav-link {
+  border: 1px solid gray;
+  border-radius: 0px;
+  font-size: 30px;
+  padding: 28px;
+  color: rgba(0, 0, 0, 0.7725490196) !important;
+}
+
+.active {
+  border-top: 4px solid #b5d8f7;
+  border-left: none;
+  border-right: none;
+  background-color: transparent !important;
+  color: rgba(0, 0, 0, 0.7725490196) !important;
+  font-weight: bold;
+}
+
+.btn-exit {
+  padding: 15px 25px;
+  background-color: #b5d8f7;
+  border-radius: 7px;
+  margin-left: 60px;
+}/*# sourceMappingURL=admin.component.css.map */
