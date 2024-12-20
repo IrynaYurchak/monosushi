@@ -1,15 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { IProductResponse } from '../../shared/interfaces/product/product.interface';
 import { ProductService } from '../../shared/services/product/product.service';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product',
-  standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  standalone: false,
   providers: [ProductService],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
@@ -39,7 +36,7 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.productServices.getAllByCategory(categoryName).subscribe(data => {
       this.userProducts = data.map(product => {
         if (!product.count) {
-          product.count = 1;  
+          product.count = 1;
         }
         return product;
       });

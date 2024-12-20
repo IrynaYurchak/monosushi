@@ -1,0 +1,27 @@
+<div>
+    <div class="text-center">
+        <div class="fs-2 fw-bold mt-5 text-uppercase">ми зателефонуємо</div>
+        <p class="m-3">Залиште номер телефонуі наші менеджери звяжуться з вами</p>
+    </div>
+    <form [formGroup]="infoForm" class="info-form">
+        <div class="row">
+            <mat-form-field appearance="outline" class="mt-4">
+                <mat-label>Ваше ім'я</mat-label>
+                <input matInput formControlName="name" type="text" />
+                <mat-error *ngIf="infoForm.get('name')?.hasError('required')">
+                    Поле не заповнено
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="mt-4">
+                <mat-label>Телефон</mat-label>
+                <input matInput formControlName="phone" type="tel" placeholder="+380973844444" />
+                <mat-error *ngIf="infoForm.get('phone')?.hasError('required')">Телефон обов'язковий</mat-error>
+                <mat-error *ngIf="infoForm.get('phone')?.hasError('pattern')">Формат телефону невірний</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="btn sent-button fw-bold" type="submit"
+                [disabled]="infoForm.invalid" (click)="sent()">Надіслати</button>
+
+        </div>
+
+    </form>
+</div>

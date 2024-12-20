@@ -40,8 +40,7 @@
                 </div>
             </ng-container>
 
-            <div><button type="submit" [disabled]="productForm.invalid" class="btn-save fs-4">{{ editStatus ? 'Зберегти
-                    зміни': 'Зберегти' }}</button></div>
+            <div><button type="submit" [disabled]="productForm.invalid" class="btn-save fs-4">{{ editStatus ? 'Зберегти зміни': 'Зберегти' }}</button></div>
 
         </form>
     </div>
@@ -63,7 +62,7 @@
         <tbody class="table-group-divider">
             <tr *ngFor="let product of adminProducts; let i = index">
                 <th class="align-middle">{{product.id }}</th>
-                <td class="align-middle">{{product.category}}</td> 
+                <td class="align-middle">{{product.category}}</td>
                 <td class="align-middle">{{ product.name }}</td>
                 <td class="align-middle">{{ product.path }}</td>
                 <td class="align-middle">{{ product.description | slice:0:14}}

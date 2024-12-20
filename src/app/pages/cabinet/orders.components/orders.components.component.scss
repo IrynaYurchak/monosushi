@@ -1,0 +1,26 @@
+@import '../../../shared/styles/variables';
+
+.orderTable {
+    min-width: 1200px;
+    margin: 40px 40px;
+}
+
+.divide {
+    border-top: 4px solid $primary;
+}
+
+li {
+    list-style-type: none;
+}
+
+.btn-done,
+.btn-repeat {
+    color: green;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-repeat {
+    color: $primary;
+    margin-left: 20px;
+}

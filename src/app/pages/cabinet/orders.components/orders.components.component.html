@@ -1,0 +1,38 @@
+<table class="orderTable text-center fs-5 mr-0">
+    <thead>
+      <tr>
+        <th scope="col"  class="p-4" >№ замовлення</th>
+        <th scope="col">Дата та час</th>
+        <th scope="col">Адреса</th>
+        <th scope="col">Сума</th>
+        <th scope="col">Статус</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <ng-container *ngFor="let order of orders; let i = index">
+        <!-- Основний рядок -->
+        <tr class="divide">
+          <td class="align-middle p-5" scope="row">{{ i + 1 }}</td>
+          <td class="align-middle">{{ order.date }}</td>
+          <td class="align-middle">{{ order.address }}</td>
+          <td class="align-middle">{{ order.total }}</td>
+          <td class="align-middle text-center">
+            <div class="d-flex flex-row justify-content-center">
+              <button class="btn-done" >Виконано</button>
+              <button class="btn-repeat">Повторити</button>
+            </div>
+          </td>
+        </tr>
+        <!-- Деталі замовлення -->
+        <tr class="order-details">
+          <td colspan="5">
+            <ul class="text-start">
+              <li *ngFor="let item of order.items">
+                {{ item.name }} — {{ item.quantity }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>

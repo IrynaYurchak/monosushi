@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { IProductResponse } from '../../../shared/interfaces/product/product.interface';
 import { OrderService } from '../../../shared/services/order/order.service';
 
 @Component({
   selector: 'app-product-info',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule],
+  standalone: false,
   templateUrl: './product-info.component.html',
   styleUrls: ['./product-info.component.scss'],
 })

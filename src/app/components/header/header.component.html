@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertia fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand header-logo p-4" routerLink="/">
+        <a class="navbar-brand header-logo p-4" routerLink="/home">
             <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Flogo%20(1).svg?alt=media&token=2dd4e08e-72e7-45ba-a1a9-fe6a934ba094"
                 alt="Логотип">
         </a>
@@ -64,7 +64,7 @@
                 </li>
 
                 <li class="nav-item m-5">
-                    <button class="btn-phone">
+                    <button class="btn-phone" (click)="openCallDialog()">
                         <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fphone.svg?alt=media&token=a5388c8c-01fa-47bb-ad3f-364704a60740"
                             height="35px" alt="Телефон">
                     </button>

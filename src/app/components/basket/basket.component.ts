@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { IProductResponse } from '../../shared/interfaces/product/product.interface';
 import { Router, RouterModule } from '@angular/router';
@@ -18,12 +18,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class BasketComponent implements OnInit {
   public productInBasket: Array<IProductResponse> = [];
   private basket: Array<IProductResponse> = [];
+
   public total = 0;
 
   constructor(
     public dialogRef: MatDialogRef<BasketComponent>,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+
   ) { }
 
   ngOnInit(): void {
@@ -48,8 +50,10 @@ export class BasketComponent implements OnInit {
     } else if (product.count > 1) {
       --product.count;
     }
-    this.calculateTotal();
-    localStorage.setItem('basket', JSON.stringify(this.productInBasket)); 
+
+  this.calculateTotal();
+  localStorage.setItem('basket', JSON.stringify(this.productInBasket));
+  this.orderService.changeBasket.next(true);
   }
 
   order(): void {
@@ -66,5 +70,12 @@ export class BasketComponent implements OnInit {
       this.productInBasket = this.basket;
     });
   }
-
+  delete(product: IProductResponse): void {
+    this.productInBasket = this.productInBasket.filter(
+      (item) => item.id !== product.id
+    );
+    localStorage.setItem('basket', JSON.stringify(this.productInBasket));
+    this.calculateTotal();
+    this.orderService.changeBasket.next(true);
+  }
 }

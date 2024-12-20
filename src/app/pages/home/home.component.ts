@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from '../product/product.component'; // Імпорт компоненти Product
 import { IProductResponse } from '../../shared/interfaces/product/product.interface';
 import { ProductService } from '../../shared/services/product/product.service';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule, ProductComponent], 
+  standalone: false,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   providers: [ProductService],

@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { IDiscountResponse } from '../../shared/interfaces/discount/discount.interface';
 import { DiscountService } from '../../shared/services/discount/discount.service';
 
 @Component({
   selector: 'app-discount',
-  standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  standalone: false,
   templateUrl: './discount.component.html',
   styleUrls: ['./discount.component.scss'],
   providers: [DiscountService]

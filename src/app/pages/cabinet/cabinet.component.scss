@@ -1,5 +1,13 @@
 @import '../../shared/styles/variables';
 
+.cabinet-content {
+    display: flex
+}
+
+// .menu {
+//     margin-left: 50px;
+
+// }
 
 .nav-link {
     border: 1px solid gray;
@@ -16,37 +24,4 @@
     background-color: transparent !important;
     color: $color !important;
     font-weight: bold;
-}
-
-.numbering {
-    background-color: $primary;
-    border-radius: $radius;
-    font-size: 20px;
-    font-weight: bold;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    margin-right: 10px;
-}
-
-input {
-    margin-top: 20px;
-    height: 60px;
-    border-radius: $radius;
-    font-size: 20px;
-    padding-left: 20px;
-}
-
-.btn-addAddress, .btn-save {
-    border: 2px solid $primary;
-    border-radius: $radius;
-    width: 250px;
-    padding: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 30px;
-}
-.btn-save{
-background-color: $primary;
-margin-left: 50px;
 }

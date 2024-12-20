@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiscountComponent } from '../../shared/interfaces/discount/discount.interface';
+
+import { DiscountComponent } from './discount.component'
 
 describe('DiscountComponent', () => {
   let component: DiscountComponent;
@@ -11,7 +12,7 @@ describe('DiscountComponent', () => {
       imports: [DiscountComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(DiscountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

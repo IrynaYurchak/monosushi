@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { AccountService } from '../shared/services/account/account.service';
 
 @Component({
   selector: 'app-admin',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
+  standalone: false,
   providers: [],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']

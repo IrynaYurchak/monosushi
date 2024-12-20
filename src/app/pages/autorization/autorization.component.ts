@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { SharedModule } from '../../shared/shared.module';
 
+
 // Конфігурація другого Firebase-додатка
 const secondaryFirebaseConfig = {
   projectId: 'monosushinew',
@@ -26,8 +27,8 @@ const secondaryFirebaseConfig = {
 
 @Component({
   selector: 'app-autorization',
-  standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule,  SharedModule, ReactiveFormsModule],
+  standalone: false,
+  // imports: [CommonModule, RouterModule, HttpClientModule,  SharedModule, ReactiveFormsModule],
   templateUrl: './autorization.component.html',
   styleUrls: ['./autorization.component.scss']
 })
@@ -121,4 +122,6 @@ export class AutorizationComponent implements OnInit, OnDestroy {
     }
     await setDoc(doc(this.secondaryFirestore, 'users', credential.user.uid), user);
   }
+
+
 }

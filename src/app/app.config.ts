@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
+import {AdminModule} from "./admin/admin.module";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -81,7 +82,9 @@ export const appConfig: ApplicationConfig = {
       messagingSenderId: "564594953609",
     }, "secondary"))),
 
-    provideAnimationsAsync(),
+    provideAnimationsAsync()
+    // importProvidersFrom(AdminModule),
   ],
-  
+
+
 };

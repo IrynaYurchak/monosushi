@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cabinet',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './cabinet.component.html',
   styleUrl: './cabinet.component.scss'
 })
-export class CabinetComponent {
+export class CabinetComponent implements OnInit {
+  constructor(
+    private router: Router){}
 
+ngOnInit(): void {
+
+}
 }

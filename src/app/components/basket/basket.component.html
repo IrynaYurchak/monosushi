@@ -12,10 +12,12 @@
         </div>
   
         <p class="fw-bold m-0 col-1">{{ product.price * product.count }} грн</p>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="delete(product)"></mat-icon>
       </div>
       <div class="total d-flex align-items-center justify-content-between p-5 mt-5">
         <h3>Сума: {{ total }} грн</h3>
         <button class="btn-order fs-4 p-3" (click)="order()">Оформити замовлення</button>
+     
       </div>
     </div>
   

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-delivery',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './delivery.component.html',
   styleUrl: './delivery.component.scss'
 })

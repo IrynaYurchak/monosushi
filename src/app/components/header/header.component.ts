@@ -12,6 +12,7 @@ import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedModule } from '../../shared/shared.module';
 import { BasketComponent } from '../basket/basket.component';
+import { CallComponent } from '../call/call.component';
 
 @Component({
   selector: 'app-header',
@@ -135,6 +136,12 @@ export class HeaderComponent implements OnInit {
       this.dialog.open(BasketComponent,{
         backdropClass:'dialog-back',
         panelClass:'basketContent'
+      })
+    }
+    openCallDialog():void{
+      this.dialog.open(CallComponent,{
+        backdropClass:'dialog-back',
+        panelClass:'call-dialog'
       })
     }
 }
