@@ -1,13 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IDiscountResponse } from '../../shared/interfaces/discount/discount.interface';
 import { DiscountService } from '../../shared/services/discount/discount.service';
 import { ImageService } from '../../shared/services/image/image.service';
-
-
 
 @Component({
   selector: 'app-admin-discount',
@@ -85,9 +83,9 @@ export class AdminDiscountComponent {
       description: discount.description,
       imgPath: discount.imgPath
     })
- 
+
     this.currentDiscountId = discount.id;
-   
+
   }
 
   deleteDiscount(discount: IDiscountResponse): void {
@@ -110,7 +108,7 @@ export class AdminDiscountComponent {
         console.log(err);
       })
   }
- 
+
   valueByControl(control: string): string {
     return this.discountForm.get(control)?.value;
 

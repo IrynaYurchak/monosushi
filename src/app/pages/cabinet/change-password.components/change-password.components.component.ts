@@ -1,7 +1,6 @@
-
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl } from '@angular/forms';
 import { SharedModule } from '../../../shared/shared.module';
 
 
@@ -46,11 +45,12 @@ export class ChangePasswordComponentsComponent implements OnInit {
   get confirmed(): AbstractControl {
     return this.passwordForm.controls['confirmationPassword']
   }
-  checkVisibilityError(control: string, name: string): boolean | null {
-    return this.passwordForm.controls[control].errors?.[name];
-  }
 
-  canceled(): void { 
+  checkVisibilityError(control: string, name: string): boolean | null {
+    const formControl = this.passwordForm.get(control);
+    return formControl ? formControl.errors?.[name] : null;
+  }
+  canceled(): void {
     this.passwordForm.reset()
   }
   saveChange(): void {

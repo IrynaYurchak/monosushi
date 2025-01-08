@@ -4,8 +4,8 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractContro
 import { SharedModule } from '../../shared/shared.module';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Auth, signInWithEmailAndPassword, getAuth, createUserWithEmailAndPassword } from '@angular/fire/auth';
-import { initializeApp, getApp } from 'firebase/app';
-import { Firestore, doc, docData, getFirestore, setDoc } from '@angular/fire/firestore';
+import { initializeApp} from 'firebase/app';
+import { doc, docData, getFirestore, setDoc } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { AccountService } from '../../shared/services/account/account.service';
@@ -13,7 +13,7 @@ import { ROLE } from '../../shared/constant/role.constant';
 import { IRegister } from '../../shared/interfaces/register/register';
 
 
-const secondaryFirebaseConfig = {
+export const secondaryFirebaseConfig = {
   projectId: 'monosushinew',
   appId: '1:564594953609:web:f610c850f2bbc59074e558',
   storageBucket: 'monosushinew.appspot.com',
@@ -41,11 +41,11 @@ export class AuthDialogComponent implements OnInit {
   private secondaryFirestore = getFirestore(this.secondaryApp);
 
   constructor(
+    public toastr: ToastrService,
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<AuthDialogComponent>,
     private accountService: AccountService,
     private router: Router,
-    private toastr: ToastrService,
     private auth: Auth
   ) { }
 
@@ -70,8 +70,6 @@ export class AuthDialogComponent implements OnInit {
     });
   }
 
-
-
   loginUser(): void {
     const { email, password } = this.loginForm.value;
     this.loginWithSecondaryFirebase(email, password)
@@ -90,7 +88,6 @@ export class AuthDialogComponent implements OnInit {
       this.accountService.isUserLogin$.next(true);
     });
   }
-
 
   registerUser(): void {
     const { email, password } = this.registerForm.value;
@@ -141,7 +138,6 @@ export class AuthDialogComponent implements OnInit {
       })
     }
   }
-
 
 
   get password(): AbstractControl {
