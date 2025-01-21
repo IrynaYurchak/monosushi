@@ -4,5 +4,5 @@ export interface ICategoryRequest{
     imgPath:string;
 }
 export interface ICategoryResponse extends ICategoryRequest{
-    id:number;
+    id:number | string;
 }

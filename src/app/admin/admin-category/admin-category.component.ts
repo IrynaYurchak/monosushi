@@ -21,7 +21,7 @@ export class AdminCategoryComponent implements OnInit {
   public editStatus = false;
   public uploadPercent!: number;
   public isUploaded = false;
-  private currentCategoryId = 0;
+  private currentCategoryId!: string;
 
   public categoryForm!: FormGroup;
   constructor(
@@ -44,7 +44,7 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   loadCategories(): void {
-    this.categoryService.getAll().subscribe(data => {
+    this.categoryService.getAllFirebase().subscribe(data => {
       this.adminCategories = data;
     });
   }
@@ -61,11 +61,11 @@ export class AdminCategoryComponent implements OnInit {
 
   addCategory(): void {
     if (this.editStatus) {
-      this.categoryService.update(this.categoryForm.value, this.currentCategoryId).subscribe(() => {
+      this.categoryService.updateFirebase(this.categoryForm.value, this.currentCategoryId).then(() => {
         this.loadCategories();
       });
     } else {
-      this.categoryService.create(this.categoryForm.value).subscribe(() => {
+      this.categoryService.createFirebase(this.categoryForm.value).subscribe(() => {
         this.loadCategories();
       });
     }
@@ -74,19 +74,13 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   editCategory(category: ICategoryResponse): void {
-    this.addBlock = true;
-    this.editStatus = true;
-    this.isUploaded = true;
-    this.categoryForm.patchValue({
-      name: category.name,
-      path: category.path,
-      imgPath: category.imgPath
-    });
-    this.currentCategoryId = category.id;
+    this.categoryService.getOneFirebase(category.id as string).subscribe(data => {
+      console.log(data, 'firebase');
+    })
   }
 
   deleteCategory(category: ICategoryResponse): void {
-    this.categoryService.delete(category.id).subscribe(() => {
+    this.categoryService.deleteFirebase(category.id as string).then(() => {
       this.loadCategories();
     });
   }
@@ -113,4 +107,3 @@ export class AdminCategoryComponent implements OnInit {
     this.uploadPercent = 0;
   }
 }
-

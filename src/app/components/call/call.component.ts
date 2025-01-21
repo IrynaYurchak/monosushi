@@ -21,7 +21,6 @@ export class CallComponent implements OnInit {
   private dialogRef: MatDialogRef<CallComponent>,
   private router: Router,
   private toastr: ToastrService,
-  // private auth: Auth
 ){}
   ngOnInit(): void {
     this.initForm();

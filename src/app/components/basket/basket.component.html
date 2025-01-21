@@ -1,37 +1,32 @@
+
 <div class="basketContent p-4">
-    <!-- Якщо є товари -->
-    <div *ngIf="productInBasket.length > 0; else emptyBasket">
-      <div *ngFor="let product of productInBasket" class="top d-flex align-items-center justify-content-between">
-        <img [src]="product.imgPath" class="imgBasket col-1" alt="{{ product.name }}">
-        <h4 class="fw-bold m-0 col-4">{{ product.name }}</h4>
-  
-        <div class="btn-group col-1" role="group" aria-label="Basic example">
-          <button type="button" (click)="productCount(product, false)" class="btn-count btn-primary">-</button>
-          <input class="form-control count" type="text" [value]="product.count" readonly>
-          <button type="button" (click)="productCount(product, true)" class="btn-count btn-primary">+</button>
-        </div>
-  
-        <p class="fw-bold m-0 col-1">{{ product.price * product.count }} грн</p>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="delete(product)"></mat-icon>
-      </div>
-      <div class="total d-flex align-items-center justify-content-between p-5 mt-5">
-        <h3>Сума: {{ total }} грн</h3>
-        <button class="btn-order fs-4 p-3" (click)="order()">Оформити замовлення</button>
-     
-      </div>
+<div *ngIf="productInBasket.length > 0 && isUserLoggedIn(); else emptyBasket">
+  <div *ngFor="let product of productInBasket" class="top d-flex align-items-center justify-content-between">
+    <img [src]="product.imgPath" class="imgBasket col-1" alt="{{ product.name }}">
+    <h4 class="fw-bold m-0 col-4">{{ product.name }}</h4>
+
+    <div class="btn-group col-1" role="group" aria-label="Basic example">
+      <button type="button" (click)="productCount(product, false)" class="btn-count btn-primary">-</button>
+      <input class="form-control count" type="text" [value]="product.count" readonly>
+      <button type="button" (click)="productCount(product, true)" class="btn-count btn-primary">+</button>
     </div>
-  
-    <!-- Якщо кошик порожній -->
-    <ng-template #emptyBasket>
-      <div class="empty-basket text-center">
-        <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fcart-empty-img.svg?alt=media&token=1cfcabd0-4972-4438-99ec-1e9fd94d1851"
-             alt="Кошик порожній" class="img-fluid">
-        <h3 class="mt-4">Кошик порожній</h3>
-        <button class="btn btn-empty"  routerLinkActive="active" (click)="closeDialog()">Перейти до каталогу</button>
-    </div>
-    <div class="total d-flex align-items-center justify-content-between p-5 mt-5">
-        <h3>Сума: {{ total }} грн</h3>
-        <button class="btn-order fs-4 p-3" (click)="order()">Оформити замовлення</button>
-      </div>
-    </ng-template>
+
+    <p class="fw-bold m-0 col-1">{{ product.price * (product.count || 0) }} грн</p>
+    <mat-icon fontIcon="delete" (click)="deleteProduct(product)"></mat-icon>
+  </div>
+
+  <div class="total d-flex align-items-center justify-content-between p-5 mt-5">
+    <h3>Сума: {{ total }} грн</h3>
+    <button class="btn-order fs-4 p-3" [disabled]="productInBasket.length === 0" (click)="order()">Оформити замовлення</button>
+  </div>
+</div>
+
+<ng-template #emptyBasket>
+  <div class="empty-basket text-center">
+    <img src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/header%2Fcart-empty-img.svg?alt=media&token=1cfcabd0-4972-4438-99ec-1e9fd94d1851"
+         alt="Кошик порожній" class="img-fluid">
+    <h3 class="mt-4">Кошик порожній</h3>
+    <button class="btn btn-empty" routerLinkActive="active" (click)="closeDialog()">Перейти до каталогу</button>
+  </div>
+</ng-template>
   </div>

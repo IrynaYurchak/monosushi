@@ -40,7 +40,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     productService = jasmine.createSpyObj('ProductService', ['getAll']);
-    productService.getAll.and.returnValue(of(mockProducts)); // Мок відповіді
+    productService.getAllFirebase.and.returnValue(of(mockProducts)); // Мок відповіді
 
     await TestBed.configureTestingModule({
       declarations: [HomeComponent, ProductComponent],

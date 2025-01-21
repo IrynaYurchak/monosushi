@@ -32,24 +32,35 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
   loadProduct(): void {
-    const categoryName = this.activatedRoute.snapshot.paramMap.get('category') as string;
-    this.productServices.getAllByCategory(categoryName).subscribe(data => {
-      this.userProducts = data.map(product => {
-        if (!product.count) {
-          product.count = 1;
-        }
-        return product;
-      });
+    const categoryName = this.activatedRoute.snapshot.paramMap.get('category');
+    if (!categoryName) {
+      return;
+    }
+
+    this.productServices.getAllByCategoryFirebase(categoryName).subscribe({
+      next: (data) => {
+        this.userProducts = data.map(item => {
+          const product = item as IProductResponse; // Приведення типу
+          if (!product.count) {
+            product.count = 1;
+          }
+          return product;
+        });
+      },
+      error: (err) => {
+        console.error( err);
+      },
     });
   }
+
   ngOnDestroy(): void {
     this.eventSubscription.unsubscribe();
   }
   productCount(product: IProductResponse, value: boolean): void {
     if (value) {
-      ++product.count;
-    } else if (!value && product.count > 1) {
-      --product.count;
+      product.count = (product.count || 0) + 1;
+    } else if (!value && (product.count || 0) > 1) {
+      product.count = (product.count || 0) - 1;
     }
   }
 }

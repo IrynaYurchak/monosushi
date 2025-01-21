@@ -15,9 +15,7 @@
                 src="https://firebasestorage.googleapis.com/v0/b/monosushi-10b64.appspot.com/o/home%2Fhome.jpg?alt=media&token=157fc556-daab-42a8-9121-8113bcc52eff"
                 alt="">
         </div>
-
     </div>
-
     <div class="bottom-block">
         <div class="container-fluid text-center">
             <div class="row justify-content-between align-items-center h-100">
@@ -59,7 +57,7 @@
 <app-product></app-product>
 <div class="product-list">
     <div class="box-product m-4 p-4 " *ngFor="let product of userProducts">
-        <div class="product-image"> 
+        <div class="product-image">
             <img class="m-5"   [routerLink]="[ '/product/'+ product.category, product.id]" [src]="product.imgPath" width="450px" alt=""> </div>
         <div class="product-info">
             <p  [routerLink]="[ '/product/'+ product.category, product.id]" class="fw-bold fs-1 text-center productName">{{product.name}}</p>

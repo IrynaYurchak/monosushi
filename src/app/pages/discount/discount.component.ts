@@ -12,7 +12,6 @@ import { DiscountService } from '../../shared/services/discount/discount.service
 export class DiscountComponent implements OnInit {
 
   public userDiscountes: Array<IDiscountResponse> = [];
-
   constructor(private discountService: DiscountService) { }
 
   ngOnInit(): void {
@@ -20,7 +19,7 @@ export class DiscountComponent implements OnInit {
   }
 
   loadDiscount(): void {
-    this.discountService.getAll().subscribe((userDiscountes: IDiscountResponse[]) => {
+    this.discountService.getAllFirebase().subscribe((userDiscountes: IDiscountResponse[]) => {
       this.userDiscountes = userDiscountes;
     });
   }

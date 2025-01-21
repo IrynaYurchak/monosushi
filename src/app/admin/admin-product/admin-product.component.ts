@@ -52,7 +52,7 @@ export class AdminProductComponent implements OnInit {
     });
   }
   loadCategories(): void {
-    this.categoryService.getAll().subscribe(data => {
+    this.categoryService.getAllFirebase().subscribe(data => {
       this.adminCategories = data;
       this.productForm.patchValue({
         category: this.adminCategories[0].id
@@ -60,7 +60,7 @@ export class AdminProductComponent implements OnInit {
     });
   }
   loadProduct(): void {
-    this.productServise.getAll().subscribe(data => {
+    this.productServise.getAllFirebase().subscribe(data => {
       this.adminProducts = data;
 
     });
@@ -79,11 +79,11 @@ export class AdminProductComponent implements OnInit {
 
   addProduct(): void {
     if (this.editStatus) {
-      this.productServise.update(this.productForm.value, this.currenProductId).subscribe(() => {
+      this.productServise.updateFirebase(this.productForm.value, this.currenProductId).then(() => {
         this.loadProduct();
       });
     } else {
-      this.productServise.create(this.productForm.value).subscribe(() => {
+      this.productServise.createFirebase(this.productForm.value).subscribe(() => {
         this.loadProduct();
       });
     }
@@ -110,7 +110,7 @@ export class AdminProductComponent implements OnInit {
 
 
   deleteProduct(product: IProductResponse): void {
-    this.productServise.delete(product.id).subscribe(() => {
+    this.productServise.deleteFirebase(product.id).then(() => {
       this.loadProduct();
     })
   }

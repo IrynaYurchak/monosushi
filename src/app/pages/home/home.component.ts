@@ -19,17 +19,19 @@ export class HomeComponent implements OnInit {
   }
 
   loadProducts(): void {
-    this.productService.getAll().subscribe((userProducts: IProductResponse[]) => {
-      this.userProducts = userProducts.map(product => {
-        if (!product.count) {
-          product.count = 1;
-        }
-        return product;
-      });
+    this.productService.getAllFirebase().subscribe((products) => {
+      this.userProducts = products.map((product) => ({
+        ...product,
+        count: product.count || 1,
+      }));
     });
   }
 
   productCount(product: IProductResponse, value: boolean): void {
+    if (!product.count) {
+      product.count = 1;
+    }
+
     if (value) {
       ++product.count;
     } else if (!value && product.count > 1) {

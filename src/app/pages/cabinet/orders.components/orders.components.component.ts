@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 
@@ -32,5 +31,5 @@ export class OrdersComponentsComponent {
       ]
     }
   ];
- 
+
 }

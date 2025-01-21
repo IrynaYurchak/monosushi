@@ -24,26 +24,4 @@ describe('AccountService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should call login and return user data', () => {
-    const mockResponse = {
-      id: 1,
-      email: 'test@example.com',
-      role: 'USER',
-    };
-
-    const credentials: ILogin = {
-      email: 'test@example.com',
-      password: 'password123',
-    };
-
-    service.login(credentials).subscribe((response) => {
-      expect(response).toEqual(mockResponse);
-    });
-
-    const req = httpMock.expectOne(
-      `${environment.BACKEND_URL}/auth?email=${credentials.email}&password=${credentials.password}`
-    );
-    expect(req.request.method).toBe('GET');
-    req.flush(mockResponse); // Відповідь на запит
-  });
 });

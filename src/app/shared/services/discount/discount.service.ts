@@ -1,31 +1,49 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IDiscountResponse, IDiscountRequest } from '../../interfaces/discount/discount.interface';
-import { environment } from '../../../environment/environment';
+import {from, Observable} from 'rxjs';
+import {IDiscountRequest, IDiscountResponse} from '../../interfaces/discount/discount.interface';
+import {addDoc, collection, CollectionReference, DocumentData, Firestore, getFirestore} from 'firebase/firestore';
+import {collectionData, deleteDoc, doc, docData, updateDoc} from '@angular/fire/firestore';
+import {initializeApp} from 'firebase/app';
+import {secondaryFirebaseConfig} from '../../../components/auth-dialog/auth-dialog.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DiscountService {
+  private discountCollection!: CollectionReference<DocumentData>;
+  private secondaryApp = initializeApp(secondaryFirebaseConfig, 'secondary');
+  private secondaryFirestore: Firestore;
+  constructor() {
+    this.secondaryFirestore = getFirestore(this.secondaryApp);
+    this.discountCollection = collection(this.secondaryFirestore, 'discounts');
+  }
 
-  private url = environment.BACKEND_URL;
-  private api = { discountes: `${this.url}/discountes` }
-  constructor(private http: HttpClient) { }
+  createFirebase(discount:IDiscountRequest) {
+    return from(
+      addDoc(this.discountCollection, discount).then(docRef => ({
+        id: docRef.id,
+        ...discount,
+      }))
+    );
+  }
 
-  getAll(): Observable<IDiscountResponse[]> {
-    return this.http.get<IDiscountResponse[]>(this.api.discountes);
+  getAllFirebase(): Observable<IDiscountResponse[]> {
+    return collectionData(this.discountCollection, { idField: 'id' }) as Observable<IDiscountResponse[]>;
   }
-  getOne(id: string): Observable<IDiscountResponse> {
-    return this.http.get<IDiscountResponse>(`${this.api.discountes}/${id}`);
+
+  getOneFirebase(id: string): Observable<IDiscountResponse> {
+    const discountDocumentReference = doc(this.secondaryFirestore, `discounts/${id}`);
+    return docData(discountDocumentReference, { idField: 'id' }) as Observable<IDiscountResponse>;
   }
-  create(discount: IDiscountRequest): Observable<IDiscountResponse> {
-    return this.http.post<IDiscountResponse>(this.api.discountes, discount)
+
+
+  updateFirebase(discount: IDiscountRequest, id: string): Promise<void> {
+    const discountDocumentReference = doc(this.secondaryFirestore, `discounts/${id}`);
+    return updateDoc(discountDocumentReference, { ...discount });
   }
-  update(discount:  IDiscountRequest, id: string): Observable<IDiscountResponse> {
-    return this.http.patch<IDiscountResponse>(`${this.api.discountes}/${id}`, discount);
-  }
-  delete(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.api.discountes}/${id}`);
+
+  deleteFirebase(id: string){
+    const discountDocumentReferense=doc(this.secondaryFirestore, `discounts/${id}`);
+    return deleteDoc(discountDocumentReferense)
   }
 }

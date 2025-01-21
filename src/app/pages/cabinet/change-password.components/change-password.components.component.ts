@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl } from '@angular/forms';
 import { SharedModule } from '../../../shared/shared.module';
 
-
 @Component({
   selector: 'app-change-password.components',
   standalone: true,

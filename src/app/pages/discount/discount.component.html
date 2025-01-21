@@ -4,8 +4,7 @@
         <div *ngFor="let discount of userDiscountes">
             <img class="mt-5 mb-5" [routerLink]="['/discount', discount.id]" [src]="discount.imgPath" alt="">
             <h1  class="mb-5 discountName" [routerLink]="['/discount', discount.id]">{{discount.name}}</h1>
-            <div class="btn-box mt-5"><button [routerLink]="['/discount', discount.id]" class="detail fs-2 mt-5">Дізнатися більше</button></div>    
+            <div class="btn-box mt-5"><button [routerLink]="['/discount', discount.id]" class="detail fs-2 mt-5">Дізнатися більше</button></div>
         </div>
-     
     </div>
 </div>

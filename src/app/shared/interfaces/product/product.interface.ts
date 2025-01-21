@@ -7,10 +7,9 @@ export interface IProductRequest {
     description:string;
     weight:string;
     price: number;
-    imgPath:string; 
-    count:number;
+    imgPath:string;
+  count: number;
 }
 export interface IProductResponse extends IProductRequest {
     id: string;
 }
-

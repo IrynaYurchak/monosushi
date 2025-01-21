@@ -98,12 +98,7 @@ export class AuthDialogComponent implements OnInit {
         this.closeDialog();
       })
       .catch((e) => this.toastr.error('Помилка реєстрації: ' + e.message, 'Помилка'));
-
-    console.log(this.registerForm.valid);
-    console.log(this.registerForm.errors);
-    console.log(this.registerForm.controls);
   }
-
 
 
   async emailSignUp(email: string, password: string): Promise<void> {

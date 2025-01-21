@@ -53,17 +53,17 @@ export class AdminDiscountComponent {
 
   }
   loadDiscountes(): void {
-    this.DiscountService.getAll().subscribe(data => {
+    this.DiscountService.getAllFirebase().subscribe(data => {
       this.adminDiscountes = data
     })
   }
   addDiscount(): void {
     if (this.editStatus) {
-      this.DiscountService.update(this.discountForm.value, this.currentDiscountId).subscribe(() => {
+      this.DiscountService.updateFirebase(this.discountForm.value, this.currentDiscountId).then(() => {
         this.loadDiscountes()
       })
     } else {
-      this.DiscountService.create(this.discountForm.value).subscribe(() => {
+      this.DiscountService.createFirebase(this.discountForm.value).subscribe(() => {
         this.loadDiscountes()
       })
     }
@@ -89,7 +89,7 @@ export class AdminDiscountComponent {
   }
 
   deleteDiscount(discount: IDiscountResponse): void {
-    this.DiscountService.delete(discount.id).subscribe(() => {
+    this.DiscountService.deleteFirebase(discount.id).then(() => {
       this.loadDiscountes();
     })
 
